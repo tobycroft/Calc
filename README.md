@@ -15,3 +15,20 @@ require github.com/tobycroft/Calc v1.0.0
 ```bash
 go get -u github.com/tobycroft/Calc
 ```
+
+# 功能
+
+- 类型转换
+    - 任意转换(Any2)
+        - Calc.Any2....
+            - ret:=Calc.Any2String(anyinterface)
+            - ret:=Calc.Any2Float64(anyinterface)
+            - ret:=Calc.Any2Int64(anyinterface)
+        - Calc.Any2..._2
+            - ret,err:=Calc.Any2Int64_2("string_number")
+            - ret,err:=Calc.Any2Float64_2("string_number")
+    - 精密计算(Bc_)
+        - 加法
+            - decimal_val:=Calc.Bc_add(decimal_number1,decimal_number2)
+        - 减法
+            - decimal_val:=Calc.Bc_min(decimal_number1,decimal_number2)
