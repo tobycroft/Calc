@@ -53,7 +53,7 @@ go get -u github.com/tobycroft/Calc
     - 字符串生成(GenToken/OrderId)
         - 生成Token加密
             - ```stringval:=Calc.GenerateToken()```
-        - 生成订单号
+        - 生成订单号（符合微信订单号长度标准）
             - ```stringval:=Calc.GenerateOrderId()```
             - 如需将当前秒下的订单数量归零则在main中协程调用
                 - ```go Calc.RefreshBaseNum()```
