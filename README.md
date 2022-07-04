@@ -32,6 +32,7 @@ go get -u github.com/tobycroft/Calc
             - decimal_val:=Calc.todecimal(decimal_number1)
         - 加法
             - decimal_val:=Calc.Bc_add(decimal_number1,decimal_number2)
+            - decimal_val:=Calc.Bc_sum(decimal_number1,decimal_number2)
         - 减法
             - decimal_val:=Calc.Bc_min(decimal_number1,decimal_number2)
         - 乘法
