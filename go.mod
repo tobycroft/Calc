@@ -1,4 +1,4 @@
-module Calc
+module github.com/tobycroft/Calc
 
 go 1.18
 
