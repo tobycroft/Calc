@@ -37,6 +37,26 @@ go get -u github.com/tobycroft/Calc
             - ```Calc.Hex2Dec("string")```
         - 10进制转十六进制(string)
             - ```Calc.Dec2Hex(int64_number)```
+    - 加解密
+        - 小写MD5
+            - ```Calc.Md5("string")```
+        - 大写MD5
+            - ```Calc.Md5Up("String"")```
+        - Sha1
+            - ```Calc.Sha1("string")```
+        - Sha256
+            - ```Calc.Sha256("string")```
+        - Sha512
+            - ```Calc.Sha512("string")```
+        - HmacSha256
+            - ```Calc.HmacSha256("string","secret")```
+    - 字符串生成(GenToken/OrderId)
+        - 生成Token加密
+            - ```stringval:=Calc.GenerateToken()```
+        - 生成订单号
+            - ```stringval:=Calc.GenerateOrderId()```
+            - 如需将当前秒下的订单数量归零则在main中协程调用
+                - ```go Calc.RefreshBaseNum()```
     - 精密计算(Bc_)
         - 任意转换成精密数字
             - ```decimal_val:=Calc.todecimal(decimal_number1)```
