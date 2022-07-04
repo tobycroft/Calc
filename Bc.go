@@ -79,6 +79,10 @@ func Bc_abs(num1 interface{}) decimal.Decimal {
 	return todecimal(num1).Abs()
 }
 
+func Bc_neg(num1 interface{}) decimal.Decimal {
+	return todecimal(num1).Abs().Neg()
+}
+
 func Bc_mod(num1, num2 interface{}) decimal.Decimal {
 	return todecimal(num1).Mod(todecimal(num2))
 }

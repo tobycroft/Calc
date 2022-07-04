@@ -30,6 +30,10 @@ go get -u github.com/tobycroft/Calc
     - 精密计算(Bc_)
         - 任意转换成精密数字
             - decimal_val:=Calc.todecimal(decimal_number1)
+        - 任意数转换成正数
+            - decimal_val:=Calc.Bc_abs(decimal_number1)
+        - 任意数转换成绝对负数
+            - decimal_val:=Calc.Bc_neg(decimal_number1)
         - 加法
             - decimal_val:=Calc.Bc_add(decimal_number1,decimal_number2)
             - decimal_val:=Calc.Bc_sum(decimal_number1,decimal_number2)
