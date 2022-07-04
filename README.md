@@ -32,6 +32,11 @@ go get -u github.com/tobycroft/Calc
             - ```Calc.Mt_rand(1000,9999)```
         - 泛型随机数
             - ```Calc.Rand[int64|int](1000,9999)```
+    - 进制转换(Hex/Dex)
+        - 16进制转十进制
+            - ```Calc.Hex2Dec("string")```
+        - 10进制转十六进制(string)
+            - ```Calc.Dec2Hex(int64_number)```
     - 精密计算(Bc_)
         - 任意转换成精密数字
             - ```decimal_val:=Calc.todecimal(decimal_number1)```
