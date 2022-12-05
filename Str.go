@@ -7,6 +7,7 @@ import (
 	"reflect"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func Chop(s string, character_mask string) string {
@@ -60,8 +61,10 @@ func Any2String(any interface{}) string {
 		str = tmp.String()
 
 	case decimal.Decimal:
-		tmp := any.(decimal.Decimal)
-		str = tmp.String()
+		str = any.(decimal.Decimal).String()
+
+	case time.Time:
+		any.(time.Time).Format("2006-01-02 15:04:05")
 
 	default:
 		fmt.Println("any2string", any, reflect.TypeOf(any))
