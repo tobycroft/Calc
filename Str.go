@@ -60,6 +60,10 @@ func Any2String(any interface{}) string {
 		tmp := any.(*big.Int)
 		str = tmp.String()
 
+	case time.Month:
+		tmp := int(any.(time.Month))
+		str = Int2String(tmp)
+
 	case decimal.Decimal:
 		str = any.(decimal.Decimal).String()
 
