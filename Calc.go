@@ -19,7 +19,7 @@ func Seed() int64 {
 	return num.Int64() + time.Now().UnixNano()
 }
 
-func Rand[T int | int64 | int32 | uint32 | uint64](min, max T) T {
+func Rand[T int | int64 | int32 | uint32 | uint64 | float32 | float64](min, max T) T {
 	rand2.Seed(Seed())
 	if min == max {
 		return min
@@ -45,6 +45,12 @@ func Rand[T int | int64 | int32 | uint32 | uint64](min, max T) T {
 
 		case uint32:
 			return T(uint32(min) + rand2.Uint32()%(uint32(num)+1))
+
+		case float32:
+			return T(float32(min) + rand2.Float32()*(float32(num)))
+
+		case float64:
+			return T(float64(min) + rand2.Float64()*(float64(num)))
 
 		default:
 			return T(0)
