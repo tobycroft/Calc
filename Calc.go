@@ -46,8 +46,10 @@ func Rand[T int | int64 | int32 | uint32 | uint64](min, max T) T {
 		case uint32:
 			return T(uint32(min) + rand2.Uint32()%(uint32(num)+1))
 
-		}
+		default:
+			return T(0)
 
+		}
 	}
 }
 
