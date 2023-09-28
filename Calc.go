@@ -19,16 +19,35 @@ func Seed() int64 {
 	return num.Int64() + time.Now().UnixNano()
 }
 
-func Rand[T int | int64](min, max T) T {
+func Rand[T int | int64 | int32 | uint32 | uint64](min, max T) T {
 	rand2.Seed(Seed())
 	if min == max {
 		return min
 	} else {
+		num := T(0)
 		if max-min < 0 {
-			return T(rand2.Int63n(int64(min-max))) + min
+			num = min - max
 		} else {
-			return T(rand2.Int63n(int64(max-min))) + min
+			num = max - min
 		}
+		switch any(min).(type) {
+		case int:
+			return T(rand2.Intn(int(num))) + min
+
+		case int64:
+			return T(rand2.Int63n(int64(num))) + min
+
+		case int32:
+			return T(rand2.Int31n(int32(num))) + min
+
+		case uint64:
+			return T(uint64(min) + rand2.Uint64()%(uint64(num)+1))
+
+		case uint32:
+			return T(uint32(min) + rand2.Uint32()%(uint32(num)+1))
+
+		}
+
 	}
 }
 
