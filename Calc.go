@@ -34,7 +34,7 @@ func Rand[T int | int8 | int16 | int64 | int32 | uint8 | uint16 | uint32 | uint6
 		case int, int8, int16:
 			return T(rand2.Intn(int(num))) + min
 
-		case int64:
+		case int64, time.Duration:
 			return T(rand2.Int63n(int64(num))) + min
 
 		case int32:
