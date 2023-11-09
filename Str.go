@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/shopspring/decimal"
 	"math/big"
-	"reflect"
 	"strconv"
 	"strings"
 	"time"
@@ -71,8 +70,7 @@ func Any2String(any interface{}) string {
 		any.(time.Time).Format("2006-01-02 15:04:05")
 
 	default:
-		fmt.Println("any2string", any, reflect.TypeOf(any))
-		str = ""
+		str = fmt.Sprint(any)
 	}
 	return str
 }
